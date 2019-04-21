@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  gateway:
+    image: haproxy
+    networks:
+      - atlissan-twitter_default
+    volumes:
+      - ./haproxy:/usr/local/etc/haproxy
+    ports:
+      - 80:80
+      - 443:443
+
+networks:
+  atlissan-twitter_default:
+    external: true
